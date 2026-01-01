@@ -67,15 +67,9 @@ export const cyberTools: CyberTool[] = [
     use: "Network attacks and MITM framework",
     commands: ["bettercap -iface wlan0"],
   },
-  {
-    category: "Network Analysis",
-    name: "Ettercap",
-    use: "Man-in-the-middle attack tool",
-    commands: ["ettercap -G"],
-  },
 
   // ===============================
-  // WEB APPLICATION TESTING
+  // WEB APPLICATION
   // ===============================
   {
     category: "Web Application",
@@ -91,27 +85,9 @@ export const cyberTools: CyberTool[] = [
   },
   {
     category: "Web Application",
-    name: "Nikto",
-    use: "Scan web servers for vulnerabilities",
-    commands: ["nikto -h http://target"],
-  },
-  {
-    category: "Web Application",
-    name: "Gobuster",
-    use: "Directory and DNS brute forcing",
-    commands: ["gobuster dir -u http://target -w wordlist.txt"],
-  },
-  {
-    category: "Web Application",
-    name: "Dirsearch",
-    use: "Advanced web directory brute forcing",
-    commands: ["dirsearch -u http://target"],
-  },
-  {
-    category: "Web Application",
     name: "SQLmap",
     use: "Automate SQL injection attacks",
-    commands: ["sqlmap -u \"http://target?id=1\" --dbs"],
+    commands: ['sqlmap -u "http://target?id=1" --dbs'],
   },
 
   // ===============================
@@ -125,12 +101,6 @@ export const cyberTools: CyberTool[] = [
   },
   {
     category: "Password Attacks",
-    name: "Medusa",
-    use: "Parallel login brute force tool",
-    commands: ["medusa -h target -u user -P pass.txt -M ssh"],
-  },
-  {
-    category: "Password Attacks",
     name: "John the Ripper",
     use: "Offline password cracking",
     commands: ["john hashes.txt"],
@@ -141,12 +111,6 @@ export const cyberTools: CyberTool[] = [
     use: "High-speed password recovery",
     commands: ["hashcat -m 0 hashes.txt wordlist.txt"],
   },
-  {
-    category: "Password Attacks",
-    name: "Crunch",
-    use: "Generate custom wordlists",
-    commands: ["crunch 6 8 abc123 -o wordlist.txt"],
-  },
 
   // ===============================
   // WIRELESS ATTACKS
@@ -156,24 +120,6 @@ export const cyberTools: CyberTool[] = [
     name: "Aircrack-ng",
     use: "Crack Wi-Fi passwords",
     commands: ["aircrack-ng capture.cap"],
-  },
-  {
-    category: "Wireless",
-    name: "Airmon-ng",
-    use: "Enable monitor mode",
-    commands: ["airmon-ng start wlan0"],
-  },
-  {
-    category: "Wireless",
-    name: "Airodump-ng",
-    use: "Capture wireless packets",
-    commands: ["airodump-ng wlan0mon"],
-  },
-  {
-    category: "Wireless",
-    name: "Reaver",
-    use: "Attack WPS-enabled routers",
-    commands: ["reaver -i wlan0mon -b BSSID -vv"],
   },
   {
     category: "Wireless",
@@ -197,34 +143,6 @@ export const cyberTools: CyberTool[] = [
     use: "Search local exploit database",
     commands: ["searchsploit apache"],
   },
-  {
-    category: "Exploitation",
-    name: "BeEF",
-    use: "Browser exploitation framework",
-    commands: ["beef-xss"],
-  },
-
-  // ===============================
-  // POST EXPLOITATION
-  // ===============================
-  {
-    category: "Post Exploitation",
-    name: "LinPEAS",
-    use: "Linux privilege escalation enumeration",
-    commands: ["./linpeas.sh"],
-  },
-  {
-    category: "Post Exploitation",
-    name: "WinPEAS",
-    use: "Windows privilege escalation enumeration",
-    commands: ["winpeas.exe"],
-  },
-  {
-    category: "Post Exploitation",
-    name: "BloodHound",
-    use: "Active Directory attack path analysis",
-    commands: ["bloodhound"],
-  },
 
   // ===============================
   // FORENSICS
@@ -237,21 +155,9 @@ export const cyberTools: CyberTool[] = [
   },
   {
     category: "Forensics",
-    name: "Binwalk",
-    use: "Analyze firmware images",
-    commands: ["binwalk firmware.bin"],
-  },
-  {
-    category: "Forensics",
     name: "Volatility",
     use: "Memory forensics framework",
     commands: ["volatility -f memory.img imageinfo"],
-  },
-  {
-    category: "Forensics",
-    name: "Foremost",
-    use: "Recover deleted files",
-    commands: ["foremost disk.img"],
   },
 
   // ===============================
@@ -269,10 +175,44 @@ export const cyberTools: CyberTool[] = [
     use: "Find usernames across platforms",
     commands: ["sherlock username"],
   },
+
+  // ===============================
+  // HARDWARE TOOLS 🔥
+  // ===============================
   {
-    category: "OSINT",
-    name: "SpiderFoot",
-    use: "Automated OSINT reconnaissance",
-    commands: ["spiderfoot -l 127.0.0.1:5001"],
+    category: "Hardware Tools",
+    name: "WiFi Pineapple",
+    use: "Wireless auditing and man-in-the-middle attacks",
+    commands: ["Web UI based configuration"],
+  },
+  {
+    category: "Hardware Tools",
+    name: "USB Rubber Ducky",
+    use: "Keystroke injection attacks via USB",
+    commands: ["Ducky Script payloads"],
+  },
+  {
+    category: "Hardware Tools",
+    name: "Bash Bunny",
+    use: "Multi-function USB attack platform",
+    commands: ["Payload switch-based execution"],
+  },
+  {
+    category: "Hardware Tools",
+    name: "HackRF One",
+    use: "Software Defined Radio for RF attacks",
+    commands: ["hackrf_info", "hackrf_transfer"],
+  },
+  {
+    category: "Hardware Tools",
+    name: "Alfa Network Adapter",
+    use: "Packet injection and Wi-Fi monitoring",
+    commands: ["airmon-ng start wlan0"],
+  },
+  {
+    category: "Hardware Tools",
+    name: "Raspberry Pi",
+    use: "Portable penetration testing and monitoring device",
+    commands: ["Kali Linux based tools"],
   },
 ];
