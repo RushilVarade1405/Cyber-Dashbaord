@@ -1,5 +1,8 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+
 import Layout from "./components/Layout";
+import PageTransition from "./components/PageTransition";
 
 import Home from "./pages/Home";
 import Linux from "./pages/Linux";
@@ -11,20 +14,78 @@ import Platforms from "./pages/Platforms";
 import About from "./pages/About";
 
 export default function App() {
+  const location = useLocation();
+
   return (
-    <BrowserRouter>
-      <Routes>
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
         <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/linux" element={<Linux />} />
-          <Route path="/tools" element={<Tools />} />
-          <Route path="/cyber-laws" element={<CyberLaws />} />
-          <Route path="/blockchain" element={<Blockchain />} />
-          <Route path="/cryptography" element={<Cryptography />} />
-          <Route path="/platforms" element={<Platforms />} />
-          <Route path="/about" element={<About />} />
+          <Route
+            path="/"
+            element={
+              <PageTransition>
+                <Home />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/linux"
+            element={
+              <PageTransition>
+                <Linux />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/tools"
+            element={
+              <PageTransition>
+                <Tools />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/cyber-laws"
+            element={
+              <PageTransition>
+                <CyberLaws />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/blockchain"
+            element={
+              <PageTransition>
+                <Blockchain />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/cryptography"
+            element={
+              <PageTransition>
+                <Cryptography />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/platforms"
+            element={
+              <PageTransition>
+                <Platforms />
+              </PageTransition>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <PageTransition>
+                <About />
+              </PageTransition>
+            }
+          />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </AnimatePresence>
   );
 }
